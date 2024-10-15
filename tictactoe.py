@@ -10,26 +10,39 @@ def botinput():
     global board
     global at
     at += 1
-    win1=[0,4,8]
-    win2=[0,3,6]
-    win3=[1,4,7]
-    win4=[2,5,8]
-    win5=[0,1,2]
-    win6=[3,4,5]
-    win7=[6,7,8]
-    win8=[2,4,6]
+    
     n = random.randint(0,8)
+    while board[n] in ['X','O']: n = random.randint(0,8)
     if (board[0] == 'O' and board[4] == 'O') or (board[4] == 'O' and board[8] == 'O') or (board[0] == 'O' and board[8] == 'O'):
-        if board[0] == '1': n = 0
-        elif board[4] == '5': n = 4
-        elif board[8] == '9': n = 8
+       if board[0] == '1': n = 0
+       elif board[4] == '5': n = 4
+       elif board[8] == '9': n = 8
     elif (board[0] == 'O' and board[3] == 'O') or (board[0] == 'O' and board[6] == 'O') or (board[3] == 'O' and board[6] == 'O'):
         if board[0] == '1': n = 0
         elif board[3] == '4': n = 3
         elif board[6] == '7': n = 6
-    
-    else:
-        while board[n] == 'X' or board[n] == 'O': n = random.randint(0,8)
+    elif (board[1] == 'O' and board[4] == 'O') or (board[1] == 'O' and board[7] == 'O') or (board[4] == 'O' and board[7] == 'O'):
+        if board[1] == '2': n = 1
+        elif board[4] == '5': n = 4
+        elif board[7] == '8': n = 7
+    elif (board[2] == 'O' and board[5] == 'O') or (board[2] == 'O' and board[8] == 'O') or (board[5] == 'O' and board[8] == 'O'):
+        if board[2] == '3': n = 2
+        elif board[5] == '6': n = 5
+        elif board[8] == '9': n = 8
+    elif (board[0] == 'O' and board[1] == 'O') or (board[0] == 'O' and board[2] == 'O') or (board[1] == 'O' and board[2] == 'O'):
+        if board[0] == '1': n = 0
+        elif board[1] == '2': n = 1
+        elif board[2] == '3': n = 2
+    elif (board[3] == 'O' and board[4] == 'O') or (board[3] == 'O' and board[5] == 'O') or (board[4] == 'O' and board[5] == 'O'):
+        if board[3] == '4': n = 3
+        elif board[4] == '5': n = 4
+        elif board[5] == '6': n = 5
+    elif (board[6] == 'O' and board[7] == 'O') or (board[6] == 'O' and board[8] == 'O') or (board[7] == 'O' and board[8] == 'O'):
+        if board[6] == '7': n = 6
+        elif board[7] == '8': n = 7
+        elif board[8] == '9': n = 8
+    else:   
+        while board[n] in ['X','O']: n = random.randint(0,8)
         
     
 
