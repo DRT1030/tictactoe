@@ -77,12 +77,12 @@ def botinput():
     
     nstorage.append(n+1)
     
-    
+    '''
     if len(nstorage) >= 5:
         oldestmove = nstorage.pop(0)
         if oldestmove > 0:
-            board[oldestmove] = str(int(oldestmove)-1)
-    
+            board[oldestmove] = str(int(oldestmove-1))
+    '''
      
     print("Computers turn")
     
@@ -118,11 +118,12 @@ def playerinput():
                 print('Bro theres already one, enter a number again'); sq  = int(input()) - 1; playerinput()
     
     nstorage.append(sq+1)
-    
+    '''
     if len(nstorage) >= 5:
         oldestmove = nstorage.pop(0)
         board[oldestmove] = str(oldestmove-1)
 
+    '''
     print("Player's turn")
     for i in range(0, 9, 3): print(board[i] + seperator + board[i+1] + seperator + board[i+2])
     if (board[0] == 'O' and board[4] == 'O' and board[8] == 'O') or (board[0] == 'O' and board[3] == 'O' and board[6] == 'O') or (board[1] == 'O' and board[4] == 'O' and board[7] == 'O') or \
